@@ -1,0 +1,75 @@
+# Parameters for the MC-NVT code
+# Number of volumen increases (Nv) 
+1
+# Number of particles (N) 
+100
+# Number of steps (Nstep) 
+700000
+# Number of steps between output lines (Iprint) 
+500
+# Number of steps between data saves (Isave) 
+500
+# Interval for update of Max. Displacetmet/Rotation (Iratio) 
+50 
+# Start collecting data after (Istart) steps 
+0
+# Configuration input file name (CNfile) 
+input_mc.txt 
+# Info output file name (INFout) 
+mc_info.txt 
+# Configuration output file name header (CNout) = 
+mc_xyz 
+# Simulated histogram data (hist) 
+HIST_x_y.txt 
+# Superellipse parameter (r = n) 
+2 
+# x-semi axis (Radx) 
+5000.00 
+# y-semi axis (Rady) 
+1500.00 
+# z-semi axis (Radz) 
+1500.00 
+# x-box size r/a (xbox) 
+340 
+# y-box size r/a (ybox) 
+33.3333 
+# Hard particle cut-off distance r/a (rcut) 
+7 
+# Number of mesh quadrant part. points (Ni) 
+100 
+# Mesh part. point - 1st approach (idref) 
+40 
+# particle step size r/a (dRmax),   max=0.2 
+0.2 
+# angular step size r/a (dQmax), max=0.1 
+0.2 
+# Electrostatic interaction constant (Bpw*exp(kap*(z-1))) Bpw= 
+6809.872 
+# Debye length (kappa*a) kap = 
+15000000 
+# ELECTRODE GAP (r/a) gap = 
+140 
+# ELECTRODE WIDTH (r/a) wid = 
+200 
+# LAMBDA  lambda = 
+0 
+# Shape parameter x-AXIS --> Lx = 
+0.09537 
+# Shape parameter y-AXIS --> Ly = 
+0.45231 
+# Shape parameter z-AXIS --> Lz = 
+0.45231 
+# CLAUSSIUS-MOSSOTTI FACTOR at 0 Hz  - fo =  
+2.8791 
+# REAL CLAUSSIUS-MOSSOTTI FACTOR OF x`- AXIS --> fcm1 = 
+-0.34916 
+# REAL CLAUSSIUS-MOSSOTTI FACTOR OF y`- AXIS --> fcm2 = 
+-0.52094 
+# REAL CLAUSSIUS-MOSSOTTI FACTOR OF z`- AXIS --> fcm3 = 
+-0.52094 
+# Imaginary CLAUSSIUS-MOSSOTTI FACTOR OF x`- AXIS --> ficm1 = 
+-0.092907 
+# Imaginary CLAUSSIUS-MOSSOTTI FACTOR OF y`- AXIS --> ficm2 = 
+-0.23117 
+# Imaginary CLAUSSIUS-MOSSOTTI FACTOR OF z`- AXIS --> ficm3 = 
+-0.23117 

@@ -1,0 +1,43 @@
+# PARAMETERS FOR AC_FIELD CODE
+#1 NAME OF FILE/FOLDER AT /group
+infile = /Baron/Dynamics/Shapes/Ellipses/Ramp_Slow_v2
+#2 GRAYSCALE OF THE IMAGE (8 OR 12)
+gs = 12
+#3 X DIMENSIONS OF THE IMAGE (XMIN, XMAX)
+xmin = 1
+xmax = 336
+#5 Y DIMENSIONS OF THE IMAGE (YMIN, YMAX)
+ymin = 1
+ymax = 256
+#7 NUMBER OF FRAMES TO SEARCH (needs < tot # images)
+nf = 30000
+#8 BINNING OF THE IMAGE
+bin = 4
+#9 STREAMPIX VERSION (3 OR 6)
+SpixVersion = 6
+
+
+# PARAMETERS FOR SUBMISSION TO CONDOR
+UNIVERSE     = VANILLA
+NOTIFICATION = COMPLETE
+NOTIFY_USER  = pbaron3@jhu.edu
+
+
+EXECUTABLE = B
+LOG        = B.log
+OUTPUT     = B.out
+ERROR      = B.error
+
+
+SHOULD_TRANSFER_FILES   = YES
+WHEN_TO_TRANSFER_OUTPUT = ON_EXIT_OR_EVICT
+groupdir			= /home/pbaron3/group
+TRANSFER_INPUT_FILES    = $(groupdir)$(infile)/run.txt,$(groupdir)$(infile)/mesh.txt,$(groupdir)$(infile)/box.txt,$(groupdir)$(infile)/input_mc.txt
+TRANSFER_OUTPUT_REMAPS  = "mc_order_1.txt=$(groupdir)$(infile)/mc_order_1.txt; box_size.txt=$(groupdir)$(infile)/box_size.txt; SIMINFO.txt=$(groupdir)$(infile)/SIMINFO.txt; mc_xyz_1.txt=$(groupdir)$(infile)/mc_xyz_1.txt; mc_info.txt=$(groupdir)$(infile)/mc_info.txt"
+
+
+ARGUMENTS = $(infile) $(gs) $(xmin) $(xmax) $(ymin) $(ymax) $(nf) $(bin) $(SpixVersion)
+RANK = (machine == "node01") || (machine == "node02") || (machine == "node03") || (machine == "node04") || (machine == "node05") || (machine == "node06") || (machine == "node07") || (machine == "node08") || (machine == "node09") || (machine == "node10")
+
+
+QUEUE
